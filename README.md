@@ -5,10 +5,10 @@ This repo was made with the help of this two articles:
 * [Adam Geitgey's article in Medium](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78)
 ## Method
 The face recognition step works as follow:
-* 1-Find face in the image
-* 2-Align face (not currently implemented)
-* 3-Get the encoding of the face (a unique 128 vecotor representaion of face). In this repo, Openface is used.
-* 4-Use a classification method to recognize the face in the image. The available methods are: min distance, highest vote,and svm model. 
+* Find face in the image
+* Align face (not currently implemented)
+* Get the encoding of the face (a unique 128 vecotor representaion of the face). In this repo, Openface is used.
+* Use a classification method to recognize the face in the image. The available methods are: min distance, highest vote,and svm model. 
 ## Scripts
 There are 3 main scripts:
 * train.py : expect a path of the *train* folder (The default is ./train). Inside this *train* folder, it should contain folders of the people to be recognized.
