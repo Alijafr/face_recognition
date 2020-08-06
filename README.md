@@ -52,8 +52,7 @@ python3 train.py -t ./train --svm 1
 ```
 * 2- test_accuracy.py (optional)
 ```
-Optoin 1: Using highest vote method
-Here you can adjust the tolerance to make the model more accuarate.
+Optoin 1: Using highest vote method. Here you can adjust the tolerance to make the model more accuarate.
 
 python3 test_accuary.py -p ./test -t 0.45
 
@@ -63,11 +62,16 @@ python3 test_accuary.py -p ./test -c "svm_model.sav"
 ```
 * 3- run web_cam.py
 ```
-1-min distance 
+option 1: min distance 
+
 python3 web_cam.py -rm "min"
-2-highest vote (choose the tolerance).Here you can adjust the tolerance to make the model more accuarate.
+
+option 2: highest vote (choose the tolerance).Here you can adjust the tolerance to make the model more accuarate.
+
 python3 web_cam.py -rm "svm" -t 0.45
-3-svm model
+
+option 3: svm model
+
 python3 web_cam.py -rm "svm"
 ```
 ## Feature works
