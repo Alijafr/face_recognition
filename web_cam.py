@@ -21,7 +21,7 @@ ap.add_argument("-d", "--detection_method", type=str, default="HOG",
 ap.add_argument("-rm", "--recognition_method", type=str, default="vote",
 	help="face recognition method to use: either `min` or `vote`")
 ap.add_argument("-svm", "--svm_path", default="svm_model.sav",type=str, help="path for the classfier")
-ap.add_argument("-t", "--tolerance",type=float, default=0.40,help="tolerance for compare encoding distance, the less the more similar the faces need to be")
+ap.add_argument("-t", "--tolerance",type=float, default=0.45,help="tolerance for compare encoding distance, the less the more similar the faces need to be")
 args = vars(ap.parse_args())
 
 # load the known faces and embeddings

@@ -19,7 +19,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--test_path", default="./test", help="path of images used for training")
 ap.add_argument("-e", "--encodings",  default="encodings.pickle", help="path to serialized db of facial encodings")
 ap.add_argument("-m", "--detection_method", default="HOG",help="select method for face detection, HOG (default) or cnn")
-ap.add_argument("-t", "--tolerance", default=0.4,help="tolerance for compare encoding distance, the less the more similar the faces need to be")
+ap.add_argument("-t", "--tolerance", type=float ,default=0.4,help="tolerance for compare encoding distance, the less the more similar the faces need to be")
 ap.add_argument("-c", "--svm_path", type=str, help="path for the classfier")
 args = vars(ap.parse_args())
 
