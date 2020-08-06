@@ -12,13 +12,13 @@ The face recognition step works as follow:
 ## Scripts
 There are 3 main scripts:
 * train.py : expect a path of the *train* folder (The default is ./train). Inside this *train* folder, it should contain folders of the people to be recognized.
-For example: -/train/
-              - Ali/
-              - images 
+For example: - train/
+               - Ali/
+                 - images 
 Furthermore, inside each person's folder, it should contain images of only this person so that model does not get confused. 
 Lastly, there is an option to create a svm model, otherwise the encodings will be used for prediction.
 
-*test_accuary.py: used to test the accuary of the model. It expects a path for *test* folder that has the same structure as the *train* folder. The default evalution is using the produced encodings and highest vote model. In case, you chose the svm model, you will need to provide the path of the file.
+*test_accuary.py: used to test the accuary of the model. It expects a path for *test* folder that has the same structure as the *train* folder. The default evalution is using the produced encodings and highest vote model. In case, you want to use the svm model, you will need to provide the path of the file.
 After runing the train.py, it can be found as *svm_model.sav*.
 
 * web_cam.py: This is the main script. It will either use the encodings or the svm model generated from the ***train.py*** to recognize people in the image. There are 3 methods that implemented here: min distance, highest vote, and svm mode.
