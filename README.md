@@ -12,9 +12,12 @@ The face recognition step works as follow:
 ## Scripts
 There are 3 main scripts:
 * train.py : expect a path of the *train* folder (The default is ./train). Inside this *train* folder, it should contain folders of the people to be recognized.
-For example: - train/
-               - Ali/
-                 - images 
+For example: 
+```
+- train/
+  - Ali/
+    - images 
+```
 Furthermore, inside each person's folder, it should contain images of only this person so that model does not get confused. 
 Lastly, there is an option to create a svm model, otherwise the encodings will be used for prediction.
 
