@@ -1,5 +1,5 @@
 # Face_recognition
-![](demo3.gif)
+![](demo.gif)
 ## Introduction
 This repo provides a fast face recognition system that can work with cpu (no need for gpu). The implementation is based on the well-known libraries *dlib* and *face_recognition*.
 This repo was made with the help of this two articles:
