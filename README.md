@@ -1,5 +1,8 @@
 # face_recognition
 This repo provides a fast face recognition system that can work with cpu (no need for gpu). The implementation is based on the well-known libraries *dlib* and *face_recognition*.
+This repo was made with the help of this two articles:
+* [Adrian Rosebrock's article in pyimagesearch](https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
+* [Adam Geitgey's article in Medium](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78)
 ## Method
 The face recognition step works as follow:
 * 1-Find face in the image
@@ -9,7 +12,10 @@ The face recognition step works as follow:
 ## Scripts
 There are 3 main scripts:
 * train.py : expect a path of the *train* folder (The default is ./train). Inside this *train* folder, it should contain folders of the people to be recognized.
-For example /train/Ali. Furthermore, inside each person's folder, it should contain images of only this person so that model does not get confused. 
+For example: -/train/
+              - Ali/
+              - images 
+Furthermore, inside each person's folder, it should contain images of only this person so that model does not get confused. 
 Lastly, there is an option to create a svm model, otherwise the encodings will be used for prediction.
 
 *test_accuary.py: used to test the accuary of the model. It expects a path for *test* folder that has the same structure as the *train* folder. The default evalution is using the produced encodings and highest vote model. In case, you chose the svm model, you will need to provide the path of the file.
@@ -26,5 +32,41 @@ conda activate face_recognition
 ```
 * 2- Install dependencies
 ```
+pip3 install -r requirements.txt
+```
+## runing the scripts
+First run the train
+* 1- train.py
+option 1: only encodings (no svm model). If your arugments are the same, you don't need to pass them as below because they are the ***default*** 
+```
+(default arugemnts)
+python3 train.py -t ./train --svm 0
+```
+option 2: Encodings and svm model
+```
+python3 train.py -t ./train --svm 1
 
 ```
+* 2- test_accuracy.py (optional)
+```
+Optoin 1: Using highest vote
+Here you can adjust the tolerance to make the model more accuarate.
+
+python3 test_accuary.py -p ./test -t 0.45
+
+Option 2: Using svm model
+
+python3 test_accuary.py -p ./test -c "svm_model.sav"
+```
+* 3- run web_cam.py
+```
+1-min distance 
+python3 web_cam.py -rm "min"
+2-highest vote (choose the tolerance)
+python3 web_cam.py -rm "svm" -t 0.45
+3-svm model
+python3 web_cam.py -rm "svm"
+```
+## Feature works
+* Simase network to produce a better encodings to people to be recognized. 
+* Add face alignment 
