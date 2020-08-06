@@ -1,4 +1,4 @@
-# face_recognition
+# Face_recognition
 This repo provides a fast face recognition system that can work with cpu (no need for gpu). The implementation is based on the well-known libraries *dlib* and *face_recognition*.
 This repo was made with the help of this two articles:
 * [Adrian Rosebrock's article in pyimagesearch](https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
@@ -28,7 +28,7 @@ After runing the train.py, it can be found as *svm_model.sav*.
 You can choose the method using *-rm* argument. 
 
 ## Installation
-* 1-create a new environment 
+* 1-create a new conda environment 
 ```
 conda create -n face_recognition python=3.6
 conda activate face_recognition
@@ -37,10 +37,10 @@ conda activate face_recognition
 ```
 pip3 install -r requirements.txt
 ```
-## runing the scripts
-First run the train
+## Runing the scripts
+First run the train script
 * 1- train.py
-option 1: only encodings (no svm model). If your arugments are the same, you don't need to pass them as below because they are the ***default*** 
+option 1: produce encodings only (no svm model).
 ```
 (default arugemnts)
 python3 train.py -t ./train --svm 0
@@ -52,7 +52,7 @@ python3 train.py -t ./train --svm 1
 ```
 * 2- test_accuracy.py (optional)
 ```
-Optoin 1: Using highest vote
+Optoin 1: Using highest vote method
 Here you can adjust the tolerance to make the model more accuarate.
 
 python3 test_accuary.py -p ./test -t 0.45
@@ -65,11 +65,11 @@ python3 test_accuary.py -p ./test -c "svm_model.sav"
 ```
 1-min distance 
 python3 web_cam.py -rm "min"
-2-highest vote (choose the tolerance)
+2-highest vote (choose the tolerance).Here you can adjust the tolerance to make the model more accuarate.
 python3 web_cam.py -rm "svm" -t 0.45
 3-svm model
 python3 web_cam.py -rm "svm"
 ```
 ## Feature works
-* Simase network to produce a better encodings to people to be recognized. 
+* Siamese network to produce a better encodings to people to be recognized. 
 * Add face alignment 
